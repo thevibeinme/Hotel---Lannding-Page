@@ -33,8 +33,11 @@ body {
 .line-1,
 .line-3 {
   width: 2rem;
-  transition: width 0.3s;
+  transition: all 0.5s;
 }
+/* .line-2{
+  transition: opacity 0.3s;
+} */
 .menu-icon:hover .line {
   width: 2.5rem;
 }
@@ -72,7 +75,8 @@ body {
 .navigation {
   width: 40rem;
   height: 100%;
-  margin-left: 6rem;
+  /* margin-left: 6rem; */
+  left: -52rem;
   position: fixed;
   background: linear-gradient(
       to top,
@@ -85,6 +89,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  transition: left 0.5s cubic-bezier(1, 0, 0, 1);
 }
 .navigation-search {
   position: relative;
@@ -177,3 +182,173 @@ body {
   width: 3rem;
   height: 0.2rem;
 }
+.copyright {
+  font-size: 1.2rem;
+  color: #fff;
+}
+/* lets make the navbar connect with button on side bar */
+.checkbox:checked ~ .navigation {
+  left: 6rem;
+}
+.checkbox:checked ~ .sidebar .line-1 {
+  transform: rotate(-405deg) translate(-5px, 6px);
+  width: 2.5rem;
+}
+.checkbox:checked ~ .sidebar .line-3 {
+  transform: rotate(405deg) translate(-5px, -6px);
+  width: 2.5rem;
+}
+.checkbox:checked ~ .sidebar .line-2 {
+  opacity: 0;
+  /* transform: rotate(405deg) ; */
+}
+/* End of navigation */
+/* Start Header */
+header {
+  margin-left: 6rem;
+  height: 100vh;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    url(../img/header-1.jpeg) center no-repeat;
+  background-size: cover;
+}
+.brand {
+  display: flex;
+}
+.hotel-heading {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.7rem;
+  color: #deaa86;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+}
+.banner {
+  height: 65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ddd;
+}
+.banner-heading {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  font-size: 7rem;
+  font-weight: 100;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: anim 0.5s;
+}
+.banner-paragraph {
+  font-size: 3.5rem;
+  font-weight: 300;
+  animation: anim 1s backwards;
+}
+.banner-btn {
+  width: 21rem;
+  padding: 1.2rem 1.2rem;
+  border: none;
+  border-radius: 10rem;
+  font-size: 2rem;
+  color: #333;
+  letter-spacing: 0.1rem;
+  outline: none;
+  background: linear-gradient(to right, gold, goldenrod);
+  cursor: pointer;
+  animation: anim 1.5s backwards;
+}
+.banner-btn:hover {
+  background: linear-gradient(to right, goldenrod, gold);
+}
+.banner-btn:active {
+  transform: translateY(0.2rem);
+}
+/* to add animation */
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* About us */
+.about-us {
+  margin-left: 6rem;
+  display: flex;
+  background-color: #ddd;
+
+}
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+ /* justify-content: space-between; */
+ padding: 10rem;
+  align-items: center;
+  
+}
+.about-us-images {
+  position: relative;
+}
+.about-us-heading {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #555;
+
+  /* letter-spacing: 0.1rem; */
+}
+
+.small-line {
+  width: 9rem;
+  height: 0.1rem;
+  background-color: #b85d1c;
+  margin-bottom: 1rem;
+  margin-left: 12rem;
+}
+.big-line {
+  width: 20rem;
+  height: 0.1rem;
+  background-color: #b85d1c;
+  margin-left: 7rem;
+}
+.sub-heading {
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  color: #b85d1c;
+}
+.about-us-paragraph {
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+}
+.images {
+  width: 32rem;
+}
+/* .image-1{
+  position: absolute;
+  top:0;
+  right: 5rem;
+
+}
+.image-2{
+  position: absolute;
+  top:3rem;
+  left:5rem;
+
+
+}
+.image-3{
+  position: absolute;
+  bottom: 4rem;
+  right: 3rem;
+}
+.image-4{
+  position: absolute;
+  bottom: 4rem;
+  left:3rem
+}  */
+
+/* end of about us
