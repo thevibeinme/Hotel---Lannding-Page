@@ -1,5 +1,5 @@
 html {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   font-size: 62.5%;
 }
 
@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
 }
 .menu-icon {
   margin-top: 3rem;
@@ -90,6 +91,7 @@ body {
   justify-content: space-around;
   align-items: center;
   transition: left 0.5s cubic-bezier(1, 0, 0, 1);
+  z-index: 5;
 }
 .navigation-search {
   position: relative;
@@ -236,12 +238,12 @@ header {
   font-weight: 100;
   text-align: center;
   margin-bottom: 20px;
-  animation: anim 0.5s;
+  animation: anim 0.8s;
 }
 .banner-paragraph {
   font-size: 3.5rem;
   font-weight: 300;
-  animation: anim 1s backwards;
+  animation: anim 1.5s backwards;
 }
 .banner-btn {
   width: 21rem;
@@ -254,7 +256,7 @@ header {
   outline: none;
   background: linear-gradient(to right, gold, goldenrod);
   cursor: pointer;
-  animation: anim 1.5s backwards;
+  animation: anim 2s backwards;
 }
 .banner-btn:hover {
   background: linear-gradient(to right, goldenrod, gold);
@@ -276,42 +278,35 @@ header {
   margin-left: 6rem;
   display: flex;
   background-color: #ddd;
-
 }
 .about-us-content {
   display: flex;
   flex-direction: column;
- /* justify-content: space-between; */
- padding: 10rem;
+  justify-content: center;
   align-items: center;
-  
-}
-.about-us-images {
-  position: relative;
+  padding: 10rem;
+  box-sizing: border-box;
+  flex: 0 1 50%;
 }
 .about-us-heading {
   font-family: "Josefin Sans", sans-serif;
   font-size: 4rem;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   color: #555;
-
-  /* letter-spacing: 0.1rem; */
 }
-
 .small-line {
   width: 9rem;
   height: 0.1rem;
   background-color: #b85d1c;
-  margin-bottom: 1rem;
-  margin-left: 12rem;
+  margin: 0 auto 1rem auto;
 }
 .big-line {
-  width: 20rem;
+  width: 19rem;
   height: 0.1rem;
   background-color: #b85d1c;
-  margin-left: 7rem;
 }
+
 .sub-heading {
   font-size: 3.5rem;
   font-weight: 300;
@@ -323,32 +318,455 @@ header {
   font-style: italic;
   font-weight: 300;
   text-align: center;
+  margin-bottom: 5rem;
 }
-.images {
+.about-us-btn {
+  width: 15rem;
+  padding: 0.7rem 0.5rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: 0.2rem solid #b85d1c;
+  text-transform: uppercase;
+  color: #b85d1c;
+  outline: none;
+  cursor: pointer;
+  transition: margin-top 0.2s;
+}
+.arrow-right {
+  margin-left: 0.5rem;
+  transition: margin-left 0.3s;
+}
+.about-us-btn:hover .arrow-right {
+  margin-left: 1.5rem;
+}
+.about-us-btn:active {
+  margin-top: 0.5rem;
+}
+.about-us-images {
+  flex: 1 1;
+  position: relative;
+  z-index: 0;
+}
+.image {
   width: 32rem;
-}
-/* .image-1{
   position: absolute;
-  top:0;
-  right: 5rem;
-
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.4rem;
+  border: 0.2rem solid #b85d1c;
 }
-.image-2{
-  position: absolute;
-  top:3rem;
-  left:5rem;
-
-
+.image-1 {
+  transform: translate(-20%, -90%);
 }
-.image-3{
-  position: absolute;
-  bottom: 4rem;
-  right: 3rem;
+.image-2 {
+  transform: translate(-70%, -70%);
 }
-.image-4{
-  position: absolute;
-  bottom: 4rem;
-  left:3rem
-}  */
+.image-3 {
+  transform: translate(-50%, -50%);
+}
+.image-4 {
+  transform: translate(-30%, -30%);
+}
+/* common header */
+.common-header {
+  padding: 5rem;
+  color: #b85d1c;
+  text-align: center;
+}
+.common-heading {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+}
+.small-line {
+  width: 9rem;
+  height: 0.1rem;
+  background-color: #b85d1c;
+  margin: 0 auto 1rem auto;
+}
+.big-line {
+  width: 19rem;
+  height: 0.1rem;
+  margin: auto;
+  background-color: #b85d1c;
+}
 
-/* end of about us
+/* end of common header */
+/* Rooms css */
+.room {
+  margin-left: 6rem;
+}
+.rooms-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.room-card {
+  width: 60rem;
+  margin: 5rem;
+  background: #15141b;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.4);
+  /* border: none;
+  border: 0.1rem solid #b85d1c;
+  border-radius: 0.1rem; */
+}
+.room-img {
+  width: 100%;
+}
+.room-card-content {
+  padding: 2rem;
+  color: #ddd;
+  font-family: "Montserrat", sans-serif;
+}
+.room-card-heading {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 300;
+}
+.room-card-paragraph {
+  font-size: 1.5rem;
+  color: #777;
+}
+.room-price {
+  font-size: 5rem;
+  font-weight: 300;
+  margin: 0;
+  text-align: right;
+}
+.room-card-btn {
+  width: 15rem;
+  padding: 1.5rem 1rem;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+  color: #b85d1c;
+  text-transform: uppercase;
+  border: 0.1em solid #b85d1c;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: margin-left 0.3s;
+}
+.room-card-btn:hover .arrow-right {
+  margin-left: 1rem;
+}
+.room-btn-wrapper {
+  text-align: center;
+}
+.room-btn {
+  width: 20rem;
+  padding: 1.5rem 1rem;
+  font-size: 1.2rem;
+  margin: 4rem 0;
+  background: none;
+  text-transform: uppercase;
+  color: #b85d1c;
+  border: 0.1rem solid #b85d1c;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.room-btn:hover {
+  background-color: #b85d1c;
+  color: #ddd;
+}
+/* end of room */
+/* our customers */
+.customer {
+  margin-left: 6rem;
+  background-color: #15141b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.customer-heading {
+  font-size: 4rem;
+  font-family: "Montserrat", sans-serif;
+  color: #b85d1c;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.customer-paragraph {
+  font-size: 1.8rem;
+  color: #ddd;
+  width: 50%;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.author-review {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 5rem;
+}
+.author-image-wrapper {
+  margin: auto 0;
+}
+.author-img {
+  width: 20rem;
+  margin-left: -1.3rem;
+}
+.author {
+  display: flex;
+  width: 60rem;
+  background-color: #eee;
+  gap: 1.8rem;
+}
+.author-name {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+.author-mood {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #b85d1c;
+}
+.author-paragraph {
+  font-size: 1.3rem;
+  font-style: italic;
+}
+/* end our customers */
+/* Start of footer */
+.footer {
+  margin-left: 6rem;
+}
+.main-part {
+  background-color: #1c1c1c;
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem;
+}
+.footer-img {
+  width: 10rem;
+}
+.footer-heading {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: goldenrod;
+  margin: 1rem 0 3rem 0;
+}
+.footer p a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #bbb;
+}
+.footer p {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #bbb;
+  margin-bottom: 2.8rem;
+}
+.form-email {
+  display: flex;
+}
+.form-btn {
+  padding: 1rem;
+  background-color: #b85d1c;
+  color: #ddd;
+  border: none;
+}
+.input {
+  width: 25rem;
+  font-size: 1.6rem;
+  font-family: "Josefin Sans", sans-serif;
+  padding: 1rem;
+  outline: none;
+  color: #444;
+  border-radius: 0.3rem;
+}
+.gallery {
+  width: 45rem;
+}
+.gallery-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.image-wrapper {
+  width: 12rem;
+  overflow: hidden;
+}
+.footer-img {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: all 0.5s;
+}
+.footer-img:hover {
+  transform: scale(1.3);
+  opacity: 0.8;
+}
+/* end of footer */
+/* copyright part */
+.creator-part {
+  width: 100%;
+  height: 6rem;
+  margin: 0;
+  background-color: #111;
+}
+
+.copyright-text p {
+  margin: 0;
+  padding-top: 2rem;
+  text-align: center;
+}
+/* end of copyright */
+/* lets make our page responsive */
+@media (max-width: 1300px) {
+  .author-review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .author-1 {
+    margin-bottom: 3rem;
+  }
+  .main-part {
+    flex-direction: column;
+  }
+  .main-address {
+    display: flex;
+    flex-direction: column;
+  }
+  .sub-main-address {
+    display: flex;
+    margin: 0;
+  }
+  .explore {
+    display: flex;
+    flex-direction: column;
+  }
+  .sub-explore {
+    display: flex;
+  }
+  .sub-main-address p,
+  .sub-explore p {
+    margin-right: 1rem;
+  }
+}
+@media (max-width: 1200px) {
+  .about-us {
+    flex-direction: column;
+  }
+  .about-us-content {
+    margin-bottom: 13rem;
+  }
+  .image {
+    width: 20rem;
+  }
+  .about-us-images {
+    margin-bottom: 22rem;
+  }
+}
+@media (max-width: 900px) {
+  .banner {
+    text-align: center;
+  }
+  .banner-heading {
+    font-size: 4.7rem;
+  }
+  .banner-paragraph {
+    font-size: 2.6rem;
+  }
+  .banner-btn {
+    width: 16rem;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 750px) {
+  .author {
+    flex-direction: column;
+    width: 20rem;
+  }
+  .author-img {
+    margin: 0;
+  }
+  .author-image-wrapper {
+    margin: 0;
+  }
+  .main-part {
+    flex-direction: column;
+  }
+  .sub-main-address {
+    flex-direction: column;
+    margin: 0;
+  }
+  .sub-explore {
+    flex-direction: column;
+  }
+  .footer-heading {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 500px) {
+  .hotel-heading {
+    font-size: 2rem;
+    margin: auto 0;
+  }
+  .navigation {
+    width: 25rem;
+  }
+  .navigation-search-input {
+    width: 20rem;
+  }
+  .banner {
+    height: 100%;
+  }
+  .banner-heading {
+    font-size: 3rem;
+  }
+  .banner-paragraph {
+    font-size: 2rem;
+  }
+  .banner-btn {
+    width: 10rem;
+    font-size: 1.2rem;
+  }
+  .image {
+    width: 13rem;
+  }
+  .about-us-heading {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .sub-heading {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  .about-us-paragraph {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  .about-us-images {
+    margin-top: -2rem;
+    margin-bottom: 10rem;
+  }
+  .customer-heading {
+    font-size: 3rem;
+    margin-top: 4rem;
+  }
+  .customer-paragraph {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .main-header {
+    padding-left: 0;
+  }
+  .input {
+    width: 15rem;
+  }
+  .gallery {
+    width: 35rem;
+    margin-top: 2rem;
+  }
+  .gallery-images {
+    width: 30rem;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+}
+/* end  of responsive */
